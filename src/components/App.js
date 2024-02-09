@@ -1,13 +1,21 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
-import NavBar from "./NavBar";
+import { Route, NavLink } from "react-router-dom";
 import Home from "./Home";
-import Actors from "./Actors";
-import Directors from "./Directors";
 import Movies from "./Movies";
+import Directors from "./Directors";
+import Actors from "./Actors";
+import NavBar from "./NavBar";
 
-function App() {
-  return <div>{/*{code here}*/}</div>;
-}
+const App = () => {
+  return (
+    <div>
+      <NavBar />
+      <Route exact path="/" component={Home} />
+      <Route path="/movies" component={Movies} />
+      <Route path="/directors" component={Directors} />
+      <Route path="/actors" component={Actors} />
+    </div>
+  );
+};
 
 export default App;
